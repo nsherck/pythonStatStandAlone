@@ -21,6 +21,7 @@ def STATS(directoryname):
     
     
     """
+    operatorname = str(operators.dat)
     
     statsOUTHam = []
     statsOUTStr = []
@@ -38,30 +39,30 @@ def STATS(directoryname):
                     fname2 = os.path.join(fname,j)
                     os.chdir(fname2)
                     # Hamiltonian
-                    column = decideColumn('operators.dat','Hamiltonian.Real')
-                    warmup,Data,nwarmup = autoWarmupMSER('operators.dat', column)
-                    nsamples,(min,max),mean,semcc,kappa,unbiasedvar,autocor = doStats(warmup,Data,'false','False','_{0}_{1}'.format('operators.dat',column))
+                    column = decideColumn(operatorname,'Hamiltonian.Real')
+                    warmup,Data,nwarmup = autoWarmupMSER(operatorname, column)
+                    nsamples,(min,max),mean,semcc,kappa,unbiasedvar,autocor = doStats(warmup,Data,'false','False','_{0}_{1}'.format(operatorname,column))
                     b = [mean,semcc]
                     statsOUTHam.append(b)
                     
                     # StressTensorConfined_VarConc1.Real
-                    column = decideColumn('operators.dat','StressTensorConfined_VarConc1.Real')
-                    warmup,Data,nwarmup = autoWarmupMSER('operators.dat', column)
-                    nsamples,(min,max),mean,semcc,kappa,unbiasedvar,autocor = doStats(warmup,Data,'false','False','_{0}_{1}'.format('operators.dat',column))
+                    column = decideColumn(operatorname,'StressTensorConfined_VarConc1.Real')
+                    warmup,Data,nwarmup = autoWarmupMSER(operatorname, column)
+                    nsamples,(min,max),mean,semcc,kappa,unbiasedvar,autocor = doStats(warmup,Data,'false','False','_{0}_{1}'.format(operatorname,column))
                     b = [mean,semcc]
                     statsOUTStr.append(b)
                     
                     # VolFrac1.Real
-                    column = decideColumn('operators.dat','VolFrac1.Real')
-                    warmup,Data,nwarmup = autoWarmupMSER('operators.dat', column)
-                    nsamples,(min,max),mean,semcc,kappa,unbiasedvar,autocor = doStats(warmup,Data,'false','False','_{0}_{1}'.format('operators.dat',column))
+                    column = decideColumn(operatorname,'VolFrac1.Real')
+                    warmup,Data,nwarmup = autoWarmupMSER(operatorname, column)
+                    nsamples,(min,max),mean,semcc,kappa,unbiasedvar,autocor = doStats(warmup,Data,'false','False','_{0}_{1}'.format(operatorname,column))
                     b = [mean,semcc]
                     statsOUTVol1.append(b)
                     
                     # VolFrac2.Real
-                    column = decideColumn('operators.dat','VolFrac2.Real')
-                    warmup,Data,nwarmup = autoWarmupMSER('operators.dat', column)
-                    nsamples,(min,max),mean,semcc,kappa,unbiasedvar,autocor = doStats(warmup,Data,'false','False','_{0}_{1}'.format('operators.dat',column))
+                    column = decideColumn(operatorname,'VolFrac2.Real')
+                    warmup,Data,nwarmup = autoWarmupMSER(operatorname, column)
+                    nsamples,(min,max),mean,semcc,kappa,unbiasedvar,autocor = doStats(warmup,Data,'false','False','_{0}_{1}'.format(operatorname,column))
                     b = [mean,semcc]
                     statsOUTVol2.append(b)
                     
