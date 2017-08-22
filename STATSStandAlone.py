@@ -12,7 +12,8 @@ def STATS(directoryname):
 	
 		Arguments:
 			
-			directoryname - the name of the directory containing all the runs   
+			directoryname - the name of the directory containing all the runs
+            operatorname  - hardcoded, but can be specified below
 
             Outputs:
     
@@ -21,7 +22,7 @@ def STATS(directoryname):
     
     
     """
-    operatorname = str(operators.dat)
+    operatorname = str('operators.dat')
     
     statsOUTHam = []
     statsOUTStr = []
